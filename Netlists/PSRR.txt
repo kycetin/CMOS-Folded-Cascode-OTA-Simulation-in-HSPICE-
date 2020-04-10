@@ -1,0 +1,40 @@
+*Analog Circuit Design Essentials
+
+
+.INC 130nm.txt
+
+
+
+
+M1 3 2 1 1 PFET W=27u L=1.5u
+M2 2 2 1 1 PFET W=27u L=1.5u
+M3 4 4 3 3 PFET W=27u L=1.5u
+M4 5 4 2 2 PFET W=27u L=1.5u
+M5 4 6 7 7 NFET W=9u L=1.5u
+M6 5 6 8 8 NFET W=9u L=1.5u
+M7 7 9 10 10 NFET W=9u L=1.5u
+M8 8 9 10 10 NFET W=9u L=1.5u
+M9 7 GND 11 11 PFET W=52.5u L=1.5u
+M10 8 GND 11 11 PFET W=52.5u L=1.5u
+M11 6 6 9 9 NFET W=9u L=1.5u
+M12 9 9 10 10 NFET W=9u L=1.5u
+
+VDD 1 GND AC 1
+
+VSS 10 GND AC 0
+CL 5 GND 1p
+*Vin 12 0 0
+ 
+*Vin+ 12 GND DC 0.8V AC 1
+*Vin- 13 GND DC 0.8V AC 0 
+
+Ibias1 1 11 40u
+Ibias2 1 6 40u
+*Ibias3 16 1 13u
+.AC dec 10 1 3000Meg
+.tran 0.01u 1u
+.OP
+.options post
+
+
+.end
